@@ -1,0 +1,5 @@
+#!/bin/sh
+D=$(dirname "$(readlink -f "$0")")
+"$D/env_dump.sh" before
+{ printf 'count=%s\n' "$#"; printf '%s\n' "$@"; } > "$HOME/rez/logs/args-stub.txt"
+exec /usr/autodesk/maya2026/bin/maya "$@"
